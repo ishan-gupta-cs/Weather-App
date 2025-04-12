@@ -2,6 +2,10 @@
 
 This README provides instructions for setting up and running the weather application, which consists of a client and server component.
 
+## Deployment
+
+Access the live application at: https://weather-app-henna-beta-99.vercel.app/
+
 ## Prerequisites
 
 - Node.js and npm installed
