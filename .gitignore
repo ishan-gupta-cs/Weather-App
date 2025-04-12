@@ -1,0 +1,36 @@
+# Visual Studio Code
+.vscode/
+
+# Dependencies (for both client and server - assuming Node.js for both)
+client/node_modules
+server/node_modules
+/node_modules  # In case any exist at the root level
+/.pnp
+.pnp.js
+
+# Environment Variables (for both client and server)
+client/.env
+server/.env
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Testing
+client/coverage
+server/coverage
+/coverage
+
+# Production build output
+client/build
+server/build
+/build
+
+# Misc operating system files
+.DS_Store
+
+# npm and yarn logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
