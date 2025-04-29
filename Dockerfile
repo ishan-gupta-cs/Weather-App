@@ -30,4 +30,4 @@ EXPOSE 3522
 EXPOSE 3000
 
 # Start backend and frontend concurrently
-CMD ["sh", "-c", "npm start & npm start & wait"]
+CMD ["sh", "-c", "npm start & npm run client & wait"]
