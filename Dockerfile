@@ -3,7 +3,7 @@ FROM node:18 AS frontend
 WORKDIR /app/client
 COPY client/package*.json ./
 RUN npm install
-COPY client/ .
+COPY client/ . 
 RUN npm run build
 
 # ---------- Build Backend ----------
@@ -16,8 +16,18 @@ COPY server/ .
 # ---------- Final Image ----------
 FROM node:18-alpine
 WORKDIR /app
-COPY --from=backend /app/server ./
+
+# Copy backend and frontend build
+COPY --from=backend /app/server ./server
 COPY --from=frontend /app/client/build ./client/build
 
+# Install required packages for both client and server
+# Start both the frontend and backend servers in parallel
+WORKDIR /app/server
+
+# Expose port for backend and frontend
 EXPOSE 3522
-CMD ["node", "server.js"]
+EXPOSE 3000
+
+# Start backend and frontend concurrently
+CMD ["sh", "-c", "npm start & npm run client & wait"]
