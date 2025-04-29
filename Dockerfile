@@ -20,4 +20,4 @@ COPY --from=backend /app/server ./
 COPY --from=frontend /app/client/build ./client/build
 
 EXPOSE 5000
-CMD ["node", "index.js"]
+CMD ["node", "server.js"]
