@@ -19,5 +19,5 @@ WORKDIR /app
 COPY --from=backend /app/server ./
 COPY --from=frontend /app/client/build ./client/build
 
-EXPOSE 5000
+EXPOSE 3522
 CMD ["node", "server.js"]

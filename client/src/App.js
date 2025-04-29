@@ -15,8 +15,8 @@ const App = () => {
     setLoading(true);
     setError(null);
 
-    // fetch(`http://localhost:3522/weather?city=${city}`)
-    fetch(`https://weather-app-ouh6.onrender.com/weather?city=${city}`)
+    fetch(`http://localhost:3522/weather?city=${city}`)
+    // fetch(`https://weather-app-ouh6.onrender.com/weather?city=${city}`)
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch weather data");
         return res.json();
